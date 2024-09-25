@@ -8,12 +8,21 @@ class Solution(object):
         mapping = {')': '(', '}': '{', ']': '['}
         
         for char in s:
-            if char in mapping.values():  # If it's an opening bracket
+            if char in mapping.values():  
                 stack.append(char)
-            elif char in mapping.keys():  # If it's a closing bracket
+            elif char in mapping.keys(): 
                 if not stack or stack.pop() != mapping[char]:
                     return False
                 
-        return not stack  # True if no unmatched opening brackets are left
+        return not stack 
+        solution = Solution()
+print(solution.isValid("()"))        
+print(solution.isValid("()[]{}"))    
+print(solution.isValid("(]"))        
+print(solution.isValid("([)]"))      
+print(solution.isValid("{[]}"))      
+
+
+
 
 
